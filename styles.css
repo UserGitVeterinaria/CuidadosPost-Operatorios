@@ -1,3 +1,4 @@
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -11,23 +12,32 @@ body {
 }
 
 header {
+    text-align: center;
     background-color: #007bff;
     color: #fff;
     padding: 20px;
+}
+
+.top-bar {
+    background-color: #0056b3;
+    color: white;
     text-align: center;
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; 
+    gap: 20px;
     padding: 20px;
     text-align: center;
 }
 
 .header-img {
-    width: 80px; 
+    width: 80px;
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
@@ -35,7 +45,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 header p {
@@ -43,77 +53,146 @@ header p {
     font-size: 1.2em;
 }
 
-main {
-    flex: 1; 
+/* Sección de bienvenida */
+.intro {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #e6f7ff);
+    margin: 20px auto;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
 }
 
-.intro, .instructions {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #fff;
+.intro h1 {
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.8;
+}
+
+.intro-img {
+    width: 120px;
+    margin: 15px auto;
+    display: block;
+}
+
+/* Instrucciones */
+.instructions {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
 }
 
-.intro h1, .instructions h2 {
-    margin-top: 0;
+.instructions h2 {
     color: #007bff;
 }
 
 .instructions ul {
-    padding: 0;
-    list-style: none;
-}
-
-.instructions ul li {
-    margin: 5px 0;
+    list-style-type: disc;
     padding-left: 20px;
-    position: relative;
 }
 
-.instructions ul li::before {
-    content: "•";
-    color: #007bff;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
+/* Botones */
 .links {
     text-align: center;
     margin-top: 20px;
 }
 
-.links h2 {
-    margin-bottom: 10px;
-}
-
-.btn {
+.links .btn {
     display: inline-block;
-    margin: 10px 15px;
     padding: 10px 20px;
-    background: #007bff;
+    margin: 10px 15px;
+    background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
-    font-size: 1em;
-    transition: background 0.3s, transform 0.2s;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background: #0056b3;
+.links .btn:hover {
+    background-color: #0056b3;
     transform: scale(1.05);
 }
 
+/* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
     background: #343a40;
     color: #fff;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+/* Estilo responsivo para móviles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Cambia de horizontal a vertical */
+    }
+
+    .header-img {
+        width: 60px; /* Reduce el tamaño de las imágenes */
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Ajusta el tamaño del título */
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .intro {
+        padding: 15px;
+    }
+
+    .intro-img {
+        width: 100px; /* Ajusta el tamaño de las imágenes en bienvenida */
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 1em; /* Ajusta el tamaño de los botones */
+    }
+}
+
+/* Ajustes específicos para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .header {
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
+    .intro p {
+        font-size: 0.9em;
+    }
+}
+
+/* Asegurar que las imágenes sean responsivas */
+img {
+    max-width: 100%;
+    height: auto;
 }
