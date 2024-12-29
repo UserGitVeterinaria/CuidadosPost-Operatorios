@@ -1,3 +1,4 @@
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -10,16 +11,20 @@ body {
     min-height: 100vh;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 header {
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     padding: 20px;
+    text-align: center;
 }
 
 .top-bar {
     background-color: #0056b3;
     color: white;
-    text-align: center;
     padding: 5px;
     font-size: 1.2em;
     font-weight: bold;
@@ -30,8 +35,8 @@ header {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    text-align: center;
     padding: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
 
 .header-img {
@@ -42,8 +47,8 @@ header {
 }
 
 header h1 {
+    font-size: 2.5em;
     margin: 0;
-    font-size: 2em;
 }
 
 header p {
@@ -51,10 +56,10 @@ header p {
     font-size: 1.2em;
 }
 
-
+/* Sección de bienvenida */
 .intro {
     background: white;
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -71,20 +76,14 @@ header p {
 .intro p {
     line-height: 1.8;
     font-size: 1.1em;
-    color: #555;
+    margin-bottom: 15px;
 }
 
-.intro-img {
-    max-width: 120px;
-    margin: 15px auto;
-    display: block;
-}
-
-
+/* Instrucciones */
 .instructions {
     background: white;
     padding: 20px;
-    margin: 20px auto;
+    margin: 30px auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
@@ -108,18 +107,35 @@ header p {
     color: #007bff;
 }
 
-.links .btn {
+/* Botones */
+.links {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.links h2 {
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Ajusta los botones en pantallas pequeñas */
+}
+
+.btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 20px;
     background: #007bff;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1em;
-    transition: background 0.3s ease, transform 0.2s;
+    transition: background 0.3s, transform 0.2s;
 }
 
-.links .btn:hover {
+.btn:hover {
     background: #0056b3;
     transform: scale(1.05);
 }
@@ -137,7 +153,6 @@ footer {
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        gap: 10px;
     }
 
     .header-img {
@@ -145,12 +160,17 @@ footer {
         height: 60px;
     }
 
-    .intro {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .intro, .instructions {
         padding: 15px;
     }
 
-    .intro-img {
-        max-width: 100px;
+    .btn {
+        font-size: 0.9em;
+        padding: 10px 15px;
     }
 }
 
@@ -159,12 +179,8 @@ footer {
         font-size: 1.5em;
     }
 
-    .intro p {
-        font-size: 1em;
-    }
-
     .btn {
         padding: 8px 12px;
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
